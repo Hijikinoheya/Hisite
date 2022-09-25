@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+
+    <!-- BootstrapのCSS読み込み -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- jQuery読み込み -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- BootstrapのJS読み込み -->
+    <script src="js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+
+    <header>
+        <h1 align=center>新規登録</h1>
+    </header>
+
+    <form action="register_act.php" method="post">
+        <div class="input-group">
+            <input type="text" name="nickname" class="form-control" placeholder="ニックネーム" aria-label=""
+                aria-describedby="basic-addon1">
+        </div>
+
+        <div class="input-group">
+            <input type="email" name="email" class="form-control" placeholder="メールアドレス" aria-label=""
+                aria-describedby="basic-addon1" pattern="[\w\d_-]+@[\w\d_-]+\.[\w\d._-]+" required>
+        </div>
+
+        <div>
+            <input type="text" name="password" class="form-control" placeholder="パスワード" aria-label=""
+                aria-describedby="basic-addon1">
+        </div>
+
+        <button type="submit" class="btn btn-primary mb-2">登録</button>
+    </form>
+
+    <div>
+        <p align=center>アカウントをお持ちですか？
+            <a href="login.php">
+                <p>ログインする</p>
+            </a>
+    </div>
+</body>
+
+</html>
