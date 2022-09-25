@@ -57,55 +57,13 @@ if ($status == false) {
   </table>
   <?php
 
-$counter_file = 'counter.txt';
-$counter_lenght = 8;
-
-$fp = fopen($counter_file, 'r+');
-
-if ($fp){
-    if (flock($fp, LOCK_EX)){
-
-        $counter = fgets($fp, $counter_lenght);
-        $counter++;
-
-        rewind($fp);
-
-        if (fwrite($fp,  $counter) === FALSE){
-            print('ファイル書き込みに失敗しました');
-        }
-
-        flock($fp, LOCK_UN);
-    }
-}
-
-fclose($fp);
-
-$format = '%0'.$counter_lenght.'d';
-$new_counter = sprintf($format, $counter);
-
-for ($i = 0 ; $i <= 9 ; $i++){
-    $num = (string)$i;
-    $img_num = '<img src="./img/b'.$i.'.png">';
-    $new_counter = str_replace($num, $img_num, $new_counter);
-}
-
-$size = ' width="16" height="18" border="0">';
-$new_counter = str_replace('>', $size, $new_counter);
-
-print('このページを見た回数:'.$new_counter.'回');
-
 ?>
 <br>
   <a href="login.php">Login</a>
   <a href="logout.php">Logout</a><br>
   <a href="mypage.php">Mypage</a><br>
   <a href="register.html">Have No Acount?Register</a>
-  <a href="bord.php">展示版テスト</a>
-  <a href="./hfsample/index.html">テスト</a><br>
-  <a href="./swith/index.html">カチカチ遊ぶ</a>
-  <a href="./timer/index.html">3分大麻ー（タイマーです。）</a>
-  <a href="./omikuji/index.html">占う。</a>
-  <a href="./chat/index.html">LocalNetworkでチャット</a>
+
   <br>
   <!-- <a href="counter3.php">こうもんしゃ</a> -->
   <a href="page.php">StaffPage</a><br>
